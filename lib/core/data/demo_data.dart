@@ -1,0 +1,58 @@
+import '../../shared/models/service_model.dart';
+
+class DemoData {
+  static List<ServiceModel> get demoServices => [
+        ServiceModel(
+          id: 'demo-1',
+          sellerId: 'demo-seller-1',
+          sellerName: 'Pixel Moments',
+          categoryId: 'cat-1',
+          category: 'Photography',
+          title: 'Wedding Photography Premium',
+          description: 'Full day coverage with 500+ edited photos',
+          price: 45000,
+          rating: 4.9,
+          reviewCount: 128,
+          distanceKm: 2.3,
+        ),
+        ServiceModel(
+          id: 'demo-2',
+          sellerId: 'demo-seller-2',
+          sellerName: 'Spice Route Catering',
+          categoryId: 'cat-2',
+          category: 'Catering',
+          title: 'South Indian Wedding Feast',
+          description: '500 guests buffet with live counters',
+          price: 85000,
+          rating: 4.7,
+          reviewCount: 89,
+          distanceKm: 4.1,
+        ),
+        ServiceModel(
+          id: 'demo-3',
+          sellerId: 'demo-seller-3',
+          sellerName: 'DJ VibeX',
+          categoryId: 'cat-3',
+          category: 'DJ',
+          title: 'Reception DJ Package',
+          description: 'Sound system + DJ + lighting',
+          price: 25000,
+          rating: 4.8,
+          reviewCount: 56,
+          distanceKm: 1.8,
+        ),
+        ServiceModel(
+          id: 'demo-4',
+          sellerId: 'demo-seller-4',
+          sellerName: 'Glam Studio',
+          categoryId: 'cat-4',
+          category: 'Makeup Artist',
+          title: 'Bridal Makeup & Hair',
+          description: 'HD makeup with trial session',
+          price: 18000,
+          rating: 4.9,
+          reviewCount: 203,
+          distanceKm: 3.5,
+        ),
+      ];
+}
