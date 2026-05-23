@@ -5,9 +5,12 @@ import 'package:go_router/go_router.dart';
 import '../../features/admin/presentation/screens/admin_dashboard_screen.dart';
 import '../../features/auth/presentation/providers/auth_provider.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
+import '../../features/auth/presentation/screens/onboarding_screen.dart';
 import '../../features/auth/presentation/screens/otp_screen.dart';
 import '../../features/auth/presentation/screens/role_selection_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
+import '../../features/auth/presentation/screens/welcome_screen.dart';
+import '../../features/seller/presentation/screens/seller_approval_pending_screen.dart';
 import '../../features/booking/presentation/screens/booking_screen.dart';
 import '../../features/booking/presentation/screens/booking_tracking_screen.dart';
 import '../../features/booking/presentation/screens/checkout_screen.dart';
@@ -50,9 +53,12 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
       final publicRoutes = [
         '/splash',
+        '/welcome',
+        '/onboarding',
         '/role-selection',
         '/login',
         '/otp',
+        '/seller-pending',
       ];
 
       if (!isLoggedIn && !publicRoutes.contains(location)) {
@@ -71,8 +77,20 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (_, __) => const SplashScreen(),
       ),
       GoRoute(
+        path: '/welcome',
+        builder: (_, __) => const WelcomeScreen(),
+      ),
+      GoRoute(
+        path: '/onboarding',
+        builder: (_, __) => const OnboardingScreen(),
+      ),
+      GoRoute(
         path: '/role-selection',
         builder: (_, __) => const RoleSelectionScreen(),
+      ),
+      GoRoute(
+        path: '/seller-pending',
+        builder: (_, __) => const SellerApprovalPendingScreen(),
       ),
       GoRoute(
         path: '/login',
