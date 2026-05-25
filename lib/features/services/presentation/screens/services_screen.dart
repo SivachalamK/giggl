@@ -27,7 +27,7 @@ class ServicesScreen extends ConsumerWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 180,
+            expandedHeight: 220,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
@@ -35,53 +35,78 @@ class ServicesScreen extends ConsumerWidget {
                   gradient: AppColors.primaryGradient,
                 ),
                 child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Find services for\nyour next event',
-                          style: TextStyle(
-                            fontSize: Responsive.value(
-                              context,
-                              mobile: 24,
-                              desktop: 32,
-                            ),
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
-                            height: 1.2,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: -60,
+                        right: -60,
+                        child: Container(
+                          width: 180,
+                          height: 180,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white.withValues(alpha: 0.1),
                           ),
                         ),
-                        const SizedBox(height: 12),
-                        GestureDetector(
-                          onTap: () => context.go('/search'),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 12,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(Icons.search, color: colors.primary),
-                                const SizedBox(width: 12),
-                                Text(
-                                  'Search photographers, DJs...',
-                                  style: TextStyle(
-                                    color: colors.onSurface.withValues(alpha: 0.5),
-                                  ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'Find services for\nyour next event',
+                              style: TextStyle(
+                                fontSize: Responsive.value(
+                                  context,
+                                  mobile: 28,
+                                  desktop: 36,
                                 ),
-                              ],
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                height: 1.1,
+                                letterSpacing: -0.5,
+                              ),
                             ),
-                          ),
+                            const SizedBox(height: 16),
+                            GestureDetector(
+                              onTap: () => context.go('/search'),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 14,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(16),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withValues(alpha: 0.1),
+                                      blurRadius: 12,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.search, color: colors.primary, size: 20),
+                                    const SizedBox(width: 12),
+                                    Text(
+                                      'Search photographers, DJs...',
+                                      style: TextStyle(
+                                        color: colors.onSurface.withValues(alpha: 0.4),
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
